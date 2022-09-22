@@ -31,7 +31,8 @@ RUN pip install jupyter-archive
 RUN jupyter nbextension enable --py widgetsnbextension
 
 ADD requirements.txt /
-RUN pip install -r requirements.txt
+RUN pip install -r /requirements.txt
+RUN pip install wandb
 
 ADD start.sh /
 

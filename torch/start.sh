@@ -21,7 +21,7 @@ fi
 
 if [[ $RUNPOD_APIKEY ]]
 then
-    runpodctl config --apiKey=$RUNPOD_APIKEY
+    /usr/bin/runpodctl config --apiKey=$RUNPOD_APIKEY
 fi
 
 if [[ $JUPYTER_PASSWORD ]]

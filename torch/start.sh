@@ -19,10 +19,7 @@ then
     chmod 600 ~/.ssh/id_ed25519
 fi
 
-if [[ $RUNPOD_APIKEY ]]
-then
-    /usr/bin/runpodctl config --apiKey=$RUNPOD_APIKEY
-fi
+echo "export PATH=\"/opt/conda/bin:$PATH\"" >> ~/.bashrc
 
 if [[ $JUPYTER_PASSWORD ]]
 then

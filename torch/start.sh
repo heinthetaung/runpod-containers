@@ -13,6 +13,17 @@ then
     service ssh start
 fi
 
+if [[ "$PRIVATE_KEY" ]]
+then
+    echo "$PRIVATE_KEY" >> ~/.ssh/id_ed25519
+    chmod 600 ~/.ssh/id_ed25519
+fi
+
+if [[ $RUNPOD_APIKEY ]]
+then
+    runpodctl config --apiKey=$RUNPOD_APIKEY
+fi
+
 if [[ $JUPYTER_PASSWORD ]]
 then
     cd /

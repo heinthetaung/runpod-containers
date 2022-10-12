@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
+ARG BASE_IMAGE=pytorch/pytorch:1.12.1-cuda11.3-cudnn8-runtime
 
 FROM ${BASE_IMAGE} as dev-base
 
@@ -32,7 +32,6 @@ RUN jupyter nbextension enable --py widgetsnbextension
 
 ADD requirements.txt /
 RUN pip install -r /requirements.txt
-RUN pip install wandb
 
 ADD start.sh /
 
